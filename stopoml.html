@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tela de Entrada - Stopots</title>
+  <style>
+    body {
+        background-image: url(stop.jpg);
+        background-size: cover;
+ 
+      text-align: center;
+      padding: 50px;
+    }
+ 
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+ 
+    input {
+      padding: 10px;
+      font-size: 18px;
+      width: 200px;
+      margin-right: 10px;
+    }
+ 
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bem-vindo ao Stopots!</h1>
+  <label for="playerName">Insira seu nome:</label>
+  <input type="text" id="playerName" placeholder="Seu Nome">
+  <button onclick="confirmEntry()">Entrar</button>
+ 
+  <script>
+    function confirmEntry() {
+      const playerName = document.getElementById('playerName').value;
+      if (playerName.trim() === '') {
+        alert('Por favor, insira um nome válido.');
+        return;
+      }
+ 
+      sessionStorage.setItem('playerName', playerName);
+      alert('Bem-vindo, ' + playerName + '! Seu nome foi salvo.');
+ 
+      // Redireciona para a próxima tela ou ação
+      // window.location.href = 'tela_confirmacao.html';
+    }
+  </script>
+</body>
+</html>
+ 
